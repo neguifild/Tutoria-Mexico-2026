@@ -11,16 +11,16 @@
 /* ... [SEU CSS ORIGINAL MANTIDO INTACTO] ... */
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 :root{
---verde:#1a6b2a;--verde2:#2d8a40;--verde3:#4aad5a;--verde4:#d4edd8;
---vermelho:#c0131a;--branco:#f8faf8;
---ouro:#b8862a;--ouro2:#d4a840;
---ink:#070f09;--ink2:#0e1a10;--ink3:#162018;
---s1:#1c2e1e;--s2:#243428;--border:#2a3e2c;
---text:#ddeade;--muted:#7a9a7c;--dim:#3a5040;
---ok:#2eb87a;--rk:#d95f5f;--at:#d98b3a;--az:#4a90d9;--pu:#8b6fd9;
---r:14px;--r2:10px;--r3:8px;
---sh:0 4px 24px rgba(0,0,0,.4);
---sh2:0 2px 12px rgba(0,0,0,.3);
+  --verde:#1a6b2a;--verde2:#2d8a40;--verde3:#4aad5a;--verde4:#d4edd8;
+  --vermelho:#c0131a;--branco:#f8faf8;
+  --ouro:#b8862a;--ouro2:#d4a840;
+  --ink:#070f09;--ink2:#0e1a10;--ink3:#162018;
+  --s1:#1c2e1e;--s2:#243428;--border:#2a3e2c;
+  --text:#ddeade;--muted:#7a9a7c;--dim:#3a5040;
+  --ok:#2eb87a;--rk:#d95f5f;--at:#d98b3a;--az:#4a90d9;--pu:#8b6fd9;
+  --r:14px;--r2:10px;--r3:8px;
+  --sh:0 4px 24px rgba(0,0,0,.4);
+  --sh2:0 2px 12px rgba(0,0,0,.3);
 }
 html{scroll-behavior:smooth;background:var(--ink)}
 body{font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);min-height:100vh;background:var(--ink);overflow-x:hidden}
@@ -75,7 +75,7 @@ body{font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);min-heigh
 }
 .ltab:hover{border-color:var(--verde);color:var(--text)}
 .ltab.on{background:var(--verde);border-color:var(--verde2);color:#fff;font-weight:600}
-.login-label{font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;font-family:'DM Mono',monospace}
+.login-label{font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;font-family:'DM Mono',monospace; transition: all 0.2s;}
 .login-input{
   width:100%;background:var(--ink);border:1px solid var(--s2);
   color:var(--text);padding:13px 16px;border-radius:9px;
@@ -102,37 +102,75 @@ body{font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);min-heigh
 
 <main class="screen on" id="sLogin">
   <section class="login-card">
-    <img class="login-logo-img" src="data:image/jpeg;base64,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" alt="Logo TutorIA" />
+    <img class="login-logo-img" src="data:image/jpeg;base64,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" alt="Logo TutorIA" />
     <h1 class="login-title">TutorIA</h1>
     <p class="login-subtitle">Escola México</p>
     
     <div class="login-tabs">
       <button class="ltab on" onclick="switchTab(this, 'tutor')">Tutor</button>
-      <button class="ltab" onclick="switchTab(this, 'aluno')">Aluno</button>
+      <button class="ltab" onclick="switchTab(this, 'estudante')">Estudante</button>
       <button class="ltab" onclick="switchTab(this, 'direcao')">Direção</button>
     </div>
 
-    <form id="loginForm" onsubmit="event.preventDefault(); alert('Login disparado!');">
-      <div class="login-label">Código de Acesso</div>
-      <input type="password" class="login-input" placeholder="••••••••" required>
+    <form id="loginForm" onsubmit="realizarLogin(event)">
+      <input type="hidden" id="userRole" name="role" value="tutor">
+
+      <div class="login-label" id="loginLabel">Código do Tutor</div>
+      <input type="password" id="loginInput" class="login-input" placeholder="••••••••" required>
       <button type="submit" class="login-btn">Entrar</button>
     </form>
   </section>
 </main>
 
 <script>
-  // Script simples para demonstrar a alternância visual das abas de login
+  // Função que faz a mágica de trocar o formulário
   function switchTab(clickedElement, role) {
-    // Remove a classe "on" de todas as abas
+    // 1. Remove a classe "on" de todas as abas
     const tabs = document.querySelectorAll('.ltab');
     tabs.forEach(tab => tab.classList.remove('on'));
     
-    // Adiciona a classe "on" apenas na aba clicada
+    // 2. Adiciona a classe "on" apenas na aba clicada
     clickedElement.classList.add('on');
     
-    // Opcional: Aqui você pode mudar a cor do placeholder ou o texto do form
-    // dependendo da role (Tutor, Aluno, Direção)
-    console.log("Mudando para visualização de: " + role);
+    // 3. Pega as referências dos elementos que vão mudar
+    const label = document.getElementById('loginLabel');
+    const input = document.getElementById('loginInput');
+    const roleInput = document.getElementById('userRole');
+
+    // 4. Salva a nova role (perfil) no formulário
+    roleInput.value = role;
+
+    // 5. Altera o visual do formulário dependendo do botão clicado
+    if (role === 'tutor') {
+      label.innerText = 'Código do Tutor';
+      input.placeholder = 'Digite o código do tutor';
+      input.type = 'password';
+    } 
+    else if (role === 'estudante') {
+      label.innerText = 'Matrícula do Estudante';
+      input.placeholder = 'Digite sua matrícula';
+      input.type = 'text'; // Estudante geralmente usa texto ao invés de senha oculta, mude se precisar
+    } 
+    else if (role === 'direcao') {
+      label.innerText = 'Chave do Vice-Diretor';
+      input.placeholder = 'Chave de acesso da direção';
+      input.type = 'password';
+    }
+
+    // Limpa o input sempre que trocar de aba para evitar erros
+    input.value = '';
+  }
+
+  // Função simulando o envio
+  function realizarLogin(event) {
+    event.preventDefault(); // Impede a página de recarregar
+    
+    const perfilSelecionado = document.getElementById('userRole').value;
+    const credencial = document.getElementById('loginInput').value;
+
+    alert(`Tentando fazer login como: ${perfilSelecionado.toUpperCase()}\nCredencial digitada: ${credencial}`);
+    
+    // Aqui no futuro você colocaria o código para enviar os dados pro seu servidor do GitHub Pages/Backend!
   }
 </script>
 </body>
